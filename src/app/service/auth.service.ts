@@ -25,8 +25,6 @@ export class AuthService {
   }
 
 
-
-
   entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{
     return this.http.post<UsuarioLogin>('https://victorblogpessoal.herokuapp.com/usuarios/logar', usuarioLogin)
  }
