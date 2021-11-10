@@ -1,7 +1,8 @@
-<div class="container-fluid">
+<div class="container-fluid p-0 m-0">
+<div class="container-fluid p-0 m-0" style="background-image: dd;" >
     
-    <div class="row bg-secondary d-flex align-items-center">
-        <div class="col-md-6">
+    <div class="row bg-dark d-flex align-items-center p-0 m-0">
+        <div class="col-md-6 p-0 m-0">
 
             <div class="row d-flex justify-content-center">
                 <div class="col-md-6 text-white">
@@ -10,7 +11,7 @@
                 </div>
             </div>
 
-            <div class="row d-flex justify-content-center mt-3 mb-5">
+            <div class="row d-flex justify-content-center mt-3 mb-5 p-0 m-0">
                 <div class="col-md-6">
                     <button class="btn btn-light mr-2 mb-2" data-toggle="modal" data-target="#novaPostagem">Nova Postagem</button>
                     <a class="btn btn-outline-light mr-2 mb-2" href="#postagens">Ver Postagens</a>
@@ -19,8 +20,8 @@
 
         </div>
 
-        <div class="col-md-6 d-flex justify-content-center">
-            <img src="https://i.imgur.com/uC0o2fN.png" alt="" width="500px" height="500px">
+        <div class="col-md-6 d-flex justify-content-center p-0 m-0">
+            <img src="https://i.imgur.com/bDFmuuB.png" alt="" width="500px" height="500px">
         </div>
 
     </div>
@@ -77,7 +78,6 @@
                     <p class="card-text"><small class="text-muted">
                         {{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}
                     </small></p>
-            
                     <a [routerLink]="['/postagem-edit', postagem.id]" class="text-info mr-3" href="">Editar</a>
                     <a [routerLink]="['/postagem-delete', postagem.id]" class="text-danger" href="">Apagar</a>
 
@@ -162,3 +162,6 @@
       </div>
     </div>
   </div>
+
+
+</div>

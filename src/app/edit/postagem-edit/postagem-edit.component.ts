@@ -34,7 +34,7 @@ export class PostagemEditComponent implements OnInit {
       this.router.navigate(['/entrar'])
       alert('Sua sessão expirou, realize o Login novamente!')
     }
-
+    
     let id = this.route.snapshot.params['id']
     this.findByIdPostagem(id)
     this.findAllTemas()
@@ -56,7 +56,6 @@ export class PostagemEditComponent implements OnInit {
     this.temaService.getAllTema().subscribe((resp: Tema[]) => {
       this.listaTemas = resp
     })
-    
   }
 
   atualizar(){
