@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { InicioComponent } from '../inicio/inicio.component';
+import { Tema } from '../model/Tema';
 import { UsuarioLogin } from '../model/UsuarioLogin';
 import { AuthService } from '../service/auth.service';
+import { TemaService } from '../service/tema.service';
 
 @Component({
   selector: 'app-entrar',
@@ -12,11 +15,24 @@ import { AuthService } from '../service/auth.service';
 export class EntrarComponent implements OnInit {
 
   usuarioLogin: UsuarioLogin = new UsuarioLogin()
+  listaTemas: Tema[]
 
-  constructor( private authService: AuthService, private router: Router) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private temaService: TemaService
+  ) { }
 
   ngOnInit(){
     window.scroll(0,0)
+
+    this.getAllTemas();
+  }
+
+  getAllTemas(){
+    this.temaService.getAllTema().subscribe((resp: Tema[]) => {
+      this.listaTemas = resp
+    })
   }
 
   entrar() {
